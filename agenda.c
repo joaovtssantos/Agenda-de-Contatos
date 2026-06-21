@@ -78,6 +78,28 @@ int main()
         break;
     case 3:
         printf("Consultar contato pelo nome");
+            char buscaNome[50];
+    int encontrado = 0;
+
+    printf("Digite o nome do contato: ");
+    scanf(" %[^\n]", buscaNome);
+
+    for(i = 0; i < totalContatos; i++){
+
+        if(strcmp(buscaNome, agenda[i].nome) == 0){
+
+            printf("\nNome: %s / Numero: %s\n",
+                   agenda[i].nome,
+                   agenda[i].numero);
+
+            encontrado = 1;
+            break;
+        }
+    }
+
+    if(encontrado == 0){
+        printf("\nContato nao encontrado\n");
+    }
         break;
     case 4:
         printf("Excluir contato");
