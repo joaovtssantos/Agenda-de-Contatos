@@ -81,6 +81,41 @@ int main()
         break;
     case 4:
         printf("Excluir contato");
+            case 4:
+
+    char nomeExcluir[50];
+
+    printf("Digite o nome do contato que deseja excluir: ");
+    scanf(" %[^\n]", nomeExcluir);
+
+    int encontrado = 0;
+
+    for(i = 0; i < totalContatos; i++){
+
+        if(strcmp(nomeExcluir, agenda[i].nome) == 0){
+
+            encontrado = 1;
+
+            for(int j = i; j < totalContatos - 1; j++){
+
+                agenda[j] = agenda[j + 1];
+
+            }
+
+            totalContatos--;
+
+            printf("\nContato excluido com sucesso!\n");
+            break;
+        }
+    }
+
+    if(encontrado == 0){
+
+        printf("\nContato nao encontrado\n");
+
+    }
+
+    break;
         break;
     case 5:
         printf("Saindo...");
