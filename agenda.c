@@ -71,7 +71,20 @@ int main()
    
         switch(opcao){
     case 1:
-        adicionarContato();
+           if(totalContatos == 100){
+        printf("\nAgenda cheia!\n");
+    } else {
+
+        printf("Digite o nome do contato: ");
+        scanf(" %[^\n]", agenda[totalContatos].nome);
+
+        printf("Digite o numero do contato: ");
+        scanf(" %[^\n]", agenda[totalContatos].numero);
+
+        printf("\nContato adicionado com sucesso!\n");
+
+        totalContatos++;
+    }
         break;
     case 2:
         listarContato();
